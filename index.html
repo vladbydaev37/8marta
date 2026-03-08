@@ -452,14 +452,20 @@ function showFinale(){
   const strip=document.getElementById('finStrip');
   strip.innerHTML=finKeys.map(([k,e])=>`<div class="fin-si"><img src="${P[k]}" alt="${e}"></div>`).join('');
 
-  const pr=score>=24?{e:'🧖‍♀️',n:'Сертификат СПА',d:'День красоты и расслабления 💚'}:
-           score>=14?{e:'💆‍♀️',n:'Сертификат Массаж',d:'Профессиональный массаж — ты заслужила!'}:
-                     {e:'🍎',n:'Золотое яблоко',d:'Особый подарок только для тебя!'};
   document.getElementById('prizeBox').innerHTML=`
-    <span class="pb-e">${pr.e}</span>
-    <div class="pb-l">✦ твой приз ✦</div>
-    <div class="pb-n">${pr.n}</div>
-    <div class="pb-d">${pr.d}</div>`;
+    <div class="pb-l">✦ твои подарки ✦</div>
+    <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
+      <div style="background:rgba(78,94,48,0.12);border:1px solid rgba(160,184,96,0.35);border-radius:12px;padding:16px 20px;text-align:center">
+        <span class="pb-e">🛍️</span>
+        <div class="pb-n">Золотое яблоко</div>
+        <div class="pb-d">Сертификат 20 000 рублей</div>
+      </div>
+      <div style="background:rgba(78,94,48,0.12);border:1px solid rgba(160,184,96,0.35);border-radius:12px;padding:16px 20px;text-align:center">
+        <span class="pb-e">💐</span>
+        <div class="pb-n">Innamorato</div>
+        <div class="pb-d">Сертификат 10 000 рублей</div>
+      </div>
+    </div>`;
   confetti();
 }
 
